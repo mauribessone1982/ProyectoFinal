@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+   
+  body{
+    font-family: $font_site;
+  }
+
+
+  h1{
+    text-align: center;
+    margin: 30px 0 50px;
+  }
+  
+  .menu{
+    background-color: $color_H_F;
+    background-image: linear-gradient(to top,#ffd001,#ff1e00);
+  }
+
+.menu__logo{
+  width:180px;
+}
+
+.menu li{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.social{
+  padding-right: 15px;
+}
+.contacto{
+  @extend .social;
+}
+.sectionBody{
+  padding: 5px;
+}
+.sectionSobreMi{
+    padding: 5px;
+  }
+.sectionSobreMi__img{
+    float: right    ;
+    vertical-align: middle;
+    width: 500px;
+    margin: 5px 10px;
+    padding-left: 30px;
+
+}
+.sectionSobreMi__img:hover{
+  transform: scaleX(-1)
+}
+  
+.sectionSobreMi__parrafo{
+    color: $color_font;
+    text-align: justify;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .sectionNoticia{
+    @extend .sectionSobreMi;
+  }
+.sectionNoticia__img{
+    float: right    ;
+    vertical-align: middle;
+    width: 500px;
+    margin: 5px 10px;
+    padding-left: 30px;
+    //transform: skewY(10deg);
+  }
+.sectionNoticia__parrafo{
+    @extend .sectionSobreMi__parrafo;
+  }
+
+
+
+  .gallery{
+    margin: 10px 50px;
+  }
+.gallery img{
+    width: 230px;
+    padding: 5px;
+    filter: grayscale(0%);
+    transition: 1s;
+  }
+  
+.gallery img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+  }
+  
+  /* Make the image fully responsive */
+  
+.container-obra{
+    width: 30%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+    position: relative;
+  }
+.carousel-item{
+    text-align: center;
+     min-height: 180px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+  }
+  .carousel-indicators li, .carousel a{
+    cursor: pointer;
+  }
+  
+.carousel-inner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+.foterPage{
+    @extend .menu;
+   
+  }
+.foterPage__link{
+    color:black;  
+  }
+.foterPage__imgSocial{
+    width:32px ;
+    height:auto;
+  }
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  // utilizo para colocar los border al  menu y foter
+  @mixin bordered($color, $width) {
+    
+    @if $color == orange {
+      border: $width solid  #191de2;
+  } @else if $color == red {
+        border: $width solid  #006400;
+  } @else if $color == yellow {
+        border: $width solid  #010d01;
+  } @else { // $BgCol es blue
+      border-color: #bfc9bf;
+  }
+  }
+  
+  .myMenu {
+    @include bordered($color, 1px);  // Call mixin with two values
+  }
+  
+  .myFoterPage{
+    @include bordered($color, 2px); // Call mixin with two values
+  }
+
+//animaciones y transiciones
+.sobreMi{
+  animation-duration: 3.5s;
+  animation-name: mostrar;
+}
+@keyframes mostrar{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.gracias{
+  color:#191970;
+  padding: 0.5em;
+  text-decoration: underline;
+  text-align: center;
+  animation-duration: 4s;
+  animation-name: mostrarGracias;
+}
+
+@keyframes mostrarGracias{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+
